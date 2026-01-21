@@ -1,0 +1,416 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+html {
+  background: #ffffff;
+}
+
+#root {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+body, html, #root {
+  background: #ffffff !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Preloader with Animated Bubbles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transform: translate3d(0, 0, 0);
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.preloader.fade-out {
+  transform: translate3d(0, -100%, 0);
+}
+
+.loading-gif {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* Animated Bubbles in Preloader */
+.preloader::before,
+.preloader::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+  background-size: 300% 300%;
+  animation: bubbleFloat 4s ease-in-out infinite, colorShift 3s ease-in-out infinite;
+}
+
+.preloader::before {
+  width: 120px;
+  height: 120px;
+  top: 15%;
+  left: 8%;
+  opacity: 0.7;
+}
+
+.preloader::after {
+  width: 180px;
+  height: 180px;
+  top: 55%;
+  right: 12%;
+  animation-delay: 2s;
+  opacity: 0.6;
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-25px) translateX(-5px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Login Container */
+.app-container {
+  height: 100vh;
+  background: url("../assets/images/my-background.jpeg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 100px;
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+}
+
+.fade-in {
+  animation: butterSmooth 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes butterSmooth {
+  0% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2) drop-shadow(0 5px 15px rgba(255, 255, 255, 0.3));
+}
+
+/* Glass Box */
+.glass-box {
+  width: 400px;
+  height: auto;
+  max-height: 500px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  color: #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.glass-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  margin: 0 0 40px 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+  text-align: left;
+}
+
+/* Input Fields */
+.login-input {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  transform: translateY(0px);
+}
+
+.login-input:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.login-input:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid #007bff;
+}
+
+.login-input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.login-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Forgot Password */
+.forgot-password {
+  text-align: right;
+  margin: -10px 0 30px 0;
+  font-size: 14px;
+  color: #999;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+  width: 100%;
+}
+
+.forgot-password:hover {
+  color: #007bff;
+  transform: translateX(-3px);
+}
+
+.forgot-password::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  right: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.forgot-password:hover::after {
+  width: 120px;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success Popup */
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.success-popup {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60px 50px;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  animation: popScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  min-width: 380px;
+}
+
+.success-icon {
+  font-size: 90px;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  animation: iconPulse 0.6s ease-out;
+}
+
+.success-text {
+  font-size: 34px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.success-subtitle {
+  font-size: 18px;
+  opacity: 0.95;
+  margin: 0;
+  font-weight: 400;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popScale {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* SIMPLE FADE OUT */
+.simple-fade-out {
+  animation: simpleFade 0.4s ease-out forwards;
+}
+
+@keyframes simpleFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: center;
+  }
+
+  .glass-box {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    padding: 30px;
+  }
+
+  .logo {
+    width: 150px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .login-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .login-button {
+    width: 100%;
+  }
+
+  .success-popup {
+    width: 90%;
+    max-width: 380px;
+    padding: 50px 40px;
+  }
+}
