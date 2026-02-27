@@ -142,7 +142,7 @@ const Notifications = () => {
       const notifRef = doc(db, 'notifications', id);
       
       // Find the notification to check if data is nested
-      const notification = notifications.find(n => n.id === id);
+      //const notification = notifications.find(n => n.id === id);
       const notifSnapshot = await getDocs(collection(db, 'notifications'));
       const docData = notifSnapshot.docs.find(d => d.id === id)?.data();
       
