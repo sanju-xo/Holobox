@@ -18,7 +18,7 @@ const Login = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/dashboard');
+      navigate('/all-ads');
     } catch (err) {
       setError('Invalid email or password');
       setLoading(false);
