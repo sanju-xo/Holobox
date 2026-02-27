@@ -3,14 +3,9 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import '../styles/Dashboard.css';
 import UserManagement from './UserManagement';
-import Analytics from './Analytics';
 import Settings from './Settings';
 import CreateAd from './CreateAd';
-import AdReview from './AdReview';
 import AllAds from './AllAds';
-import Scheduling from './Scheduling';
-import AdBoxSetup from './AdBoxSetup';
-import SystemLogs from './SystemLogs';
 import FlashSaleControl from './FlashSaleControl';
 import Notifications from './Notifications';
 import holologo from '../assets/images/holologo.png';
@@ -130,7 +125,7 @@ const Dashboard = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  //const unreadCount = notifications.filter(n => !n.read).length;
 
   const handleLogout = async () => {
     if (window.confirm('Are you sure you want to logout?')) {
