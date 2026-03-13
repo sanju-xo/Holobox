@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs, doc, updateDoc, deleteDoc, query, where } from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, updateDoc, setDoc, deleteDoc, query, where } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import '../styles/PendingProducts.css';
+
 
 const PendingProducts = () => {
   const [pendingAds, setPendingAds] = useState([]);
@@ -9,10 +10,12 @@ const PendingProducts = () => {
   const [filter, setFilter] = useState('pending');
   const [error, setError] = useState(null);
 
+
   useEffect(() => {
     fetchPendingAds();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
+
 
   const fetchPendingAds = async () => {
     setLoading(true);
@@ -71,26 +74,45 @@ const PendingProducts = () => {
     }
   };
 
+
   const handleApprove = async (adId) => {
     if (!window.confirm('Approve this product?')) return;
     
     try {
       console.log('✅ Approving product:', adId);
-      const adRef = doc(db, 'pending_products', adId);
-      await updateDoc(adRef, {
+
+      // 1. Get the full document from pending_products
+      const pendingRef = doc(db, 'pending_products', adId);
+      const pendingSnap = await getDoc(pendingRef);
+
+      if (!pendingSnap.exists()) {
+        alert('Product not found!');
+        return;
+      }
+
+      const productData = pendingSnap.data();
+
+      // 2. Copy it to the products collection
+      const productRef = doc(db, 'products', adId);
+      await setDoc(productRef, {
+        ...productData,
         status: 'approved',
         approvedAt: new Date(),
         approvedBy: 'Admin'
       });
-      
-      console.log('✅ Product approved successfully');
+
+      // 3. Delete from pending_products
+      await deleteDoc(pendingRef);
+
+      console.log('✅ Product moved to products collection');
       fetchPendingAds();
-      alert('Product approved successfully!');
+      alert('Product approved and moved to products!');
     } catch (error) {
-      console.error('❌ Error approving ad:', error);
+      console.error('❌ Error approving product:', error);
       alert('Failed to approve product: ' + error.message);
     }
   };
+
 
   const handleReject = async (adId) => {
     const reason = prompt('Enter rejection reason (optional):');
@@ -114,6 +136,7 @@ const PendingProducts = () => {
     }
   };
 
+
   const handleDelete = async (adId) => {
     if (!window.confirm('Permanently delete this product? This cannot be undone.')) return;
     
@@ -129,6 +152,7 @@ const PendingProducts = () => {
     }
   };
 
+
   const getStatusBadge = (status) => {
     const badges = {
       pending: { class: 'status-pending', text: 'Pending' },
@@ -138,6 +162,7 @@ const PendingProducts = () => {
     const badge = badges[status] || badges.pending;
     return <span className={`status-badge ${badge.class}`}>{badge.text}</span>;
   };
+
 
   if (loading) {
     return (
@@ -149,6 +174,7 @@ const PendingProducts = () => {
       </div>
     );
   }
+
 
   if (error) {
     return (
@@ -163,6 +189,7 @@ const PendingProducts = () => {
       </div>
     );
   }
+
 
   return (
     <div className="pending-products-container">
@@ -204,6 +231,7 @@ const PendingProducts = () => {
           </button>
         </div>
       </div>
+
 
       {pendingAds.length === 0 ? (
         <div className="no-ads">
@@ -328,5 +356,6 @@ const PendingProducts = () => {
     </div>
   );
 };
+
 
 export default PendingProducts;
