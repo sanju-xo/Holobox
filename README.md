@@ -49,8 +49,9 @@ The HoloBox ecosystem is divided into multiple repositories, each responsible fo
 
 | Repository         | Description                                                                                                                                                             |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Holobox-WebApp** | https://github.com/heisenburgerrr1/Holobox-WebApp — React-based web application for campaign management, authentication, analytics, and administration.                 |
+| **Holobox-WebApp** | https://github.com/heisenburgerrr1/Holobox-WebApp — - Web application featuring user authentication, multi-image product uploads, 3D model (GLB/GLTF/OBJ) upload and preview, submission tracking, analytics dashboard, and seamless Firebase backend integration.                 |
 | **Unity Project**  | https://drive.google.com/drive/folders/1rze3FmSktUh97HzdPJVaEXnNpAKP_EFA?usp=drive_link — Unity project for the interactive 3D display experience and content playback. |
+|**Live Demo (Admin Software):** | https://admin-software-eight.vercel.app/ - Manage products, approve or reject submissions, send notifications, perform user management.  |
 
 Additional repositories for the Flutter applications, AI modules, and backend services may be linked here as they become publicly available.
 
