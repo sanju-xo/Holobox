@@ -1,73 +1,103 @@
-# Getting Started with Create React App
+# HoloBox — Interactive 3D LCD Display and AI Engagement Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HoloBox is a next-generation **interactive 3D digital signage platform** that combines AI, edge computing, cloud services, and mobile applications to create a privacy-first, touchless advertising experience. It transforms conventional static displays into intelligent systems that can detect gestures, estimate audience demographics locally, and deliver personalized 3D content with real-time analytics.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+HoloBox is designed as a **cloud-edge-mobile ecosystem** with three major components:
 
-### `npm start`
+- **AdBox Embedded Unit**: Handles local gesture recognition, facial analytics, and 3D playback.
+- **Main Server**: Manages authentication, content approval, scheduling, and analytics.
+- **Mobile Applications**: Provide campaign management, AR product preview, and customer engagement.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The system is built to support **low latency, offline resilience, secure synchronization, and privacy-preserving inference**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **3D interactive digital signage** with depth-enhanced visuals.
+- **Gesture-based touchless navigation** using computer vision.
+- **Face analytics** for age and gender estimation on-device.
+- **2D to 3D conversion pipeline** for advertising creatives.
+- **Real-time campaign management** through a web admin portal.
+- **Mobile app support** for agents and customers.
+- **Firebase integration** for authentication, storage, and analytics.
+- **Offline caching and fallback playback** for reliable operation.
+- **Privacy-first edge processing** with anonymized telemetry.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Architecture
 
-### `npm run build`
+The project follows a modular tri-layer architecture:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Edge Layer — AdBox**
+   - AI inference using TensorFlow Lite and OpenCV
+   - Gesture recognition and facial analytics
+   - Local caching and playback control
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Cloud Layer — Main Server**
+   - React.js and Python-based backend
+   - Firebase database, authentication, and messaging
+   - Ad approval, scheduling, and analytics dashboard
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Mobile Layer — Flutter Apps**
+   - Agent app for campaign creation and tracking
+   - Customer app for discovery, AR preview, and purchase
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend**: React.js, Flutter
+- **Backend**: Python, Firebase
+- **AI / CV**: TensorFlow Lite, OpenCV, MediaPipe
+- **3D / AR**: WebXR, Unity, ARCore / ARKit
+- **Database / Auth**: Firebase Firestore, Firebase Authentication
+- **Deployment**: Vercel
+- **Languages**: JavaScript, Python, C#, Dart, HTML, CSS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Use Cases
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+HoloBox can be used in:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Retail advertising
+- Exhibitions and trade shows
+- Educational displays
+- Entertainment venues
+- Smart public signage
+- Interactive product promotion
 
-## Learn More
+## Advantages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Immersive 3D visuals without special eyewear
+- Touchless interaction for public environments
+- Better engagement measurement than traditional signage
+- Privacy-preserving AI inference on-device
+- Scalable and maintainable architecture
+- Secure communication and role-based access control
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Scope
 
-### Code Splitting
+- Richer gesture vocabulary and context-aware interaction
+- Real-time creative scoring and A/B testing
+- Better mobile commerce integration
+- Multi-region scaling and device cohorts
+- Stronger analytics, attribution, and predictive optimization
+- Expanded compliance and consent management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Report Summary
 
-### Analyzing the Bundle Size
+This project presents a complete system for **privacy-first, AI-driven, immersive advertising** that bridges physical attention and digital action. It combines edge intelligence, 3D visualization, and mobile commerce into a single measurable platform.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
 
-### Making a Progressive Web App
+- George Joseph
+- Mohammed Ameen
+- Sahal Salam K A
+- Salih P Ashraf
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is shared for academic and educational purposes.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 Unity File
 (https://drive.google.com/drive/folders/1rze3FmSktUh97HzdPJVaEXnNpAKP_EFA?usp=drive_link)
