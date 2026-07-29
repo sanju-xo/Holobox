@@ -2,6 +2,7 @@
 
 HoloBox is a next-generation **interactive 3D digital signage platform** that combines AI, edge computing, cloud services, and mobile applications to create a privacy-first, touchless advertising experience. It transforms conventional static displays into intelligent systems that can detect gestures, estimate audience demographics locally, and deliver personalized 3D content with real-time analytics.
 
+
 ## Overview
 
 HoloBox is designed as a **cloud-edge-mobile ecosystem** with three major components:
@@ -41,6 +42,18 @@ The project follows a modular tri-layer architecture:
 3. **Mobile Layer — Flutter Apps**
    - Agent app for campaign creation and tracking
    - Customer app for discovery, AR preview, and purchase
+
+## Project Repositories
+
+The HoloBox ecosystem is divided into multiple repositories, each responsible for a specific part of the platform.
+
+| Repository         | Description                                                                                                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Holobox-WebApp** | https://github.com/heisenburgerrr1/Holobox-WebApp — React-based web application for campaign management, authentication, analytics, and administration.                 |
+| **Unity Project**  | https://drive.google.com/drive/folders/1rze3FmSktUh97HzdPJVaEXnNpAKP_EFA?usp=drive_link — Unity project for the interactive 3D display experience and content playback. |
+
+Additional repositories for the Flutter applications, AI modules, and backend services may be linked here as they become publicly available.
+
 
 ## Tech Stack
 
@@ -98,6 +111,3 @@ This project presents a complete system for **privacy-first, AI-driven, immersiv
 This project is shared for academic and educational purposes.
 
 
-
-Unity File
-(https://drive.google.com/drive/folders/1rze3FmSktUh97HzdPJVaEXnNpAKP_EFA?usp=drive_link)
