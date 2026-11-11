@@ -4,10 +4,10 @@
   <img src="screenshots/admin login.png" width="45%" alt="Admin Login">
   <img src="screenshots/admin home.png" width="45%" alt="Admin Home">
   <img src="screenshots/admin products.png" width="45%" alt="Admin Products">
-  <img src="screenshots/client app.jpg" width="25%" alt="Client app">
-  <img src="screenshots/client app 2.jpg" width="25%" alt="Client app 2">
-  <img src="screenshots/e app home.jpg" width="25%" alt="E app home">
-  <img src="screenshots/e app products.jpg" width="25%" alt="E app products">
+  <img src="screenshots/client app.jpg" width="15%" alt="Client app">
+  <img src="screenshots/client app 2.jpg" width="15%" alt="Client app 2">
+  <img src="screenshots/e app home.jpg" width="15%" alt="E app home">
+  <img src="screenshots/e app products.jpg" width="15%" alt="E app products">
 </p>
 
 HoloBox is a next-generation **interactive 3D digital signage platform** that combines AI, edge computing, cloud services, and mobile applications to create a privacy-first, touchless advertising experience. It transforms conventional static displays into intelligent systems that can detect gestures, estimate audience demographics locally, and deliver personalized 3D content with real-time analytics.
