@@ -1,6 +1,11 @@
 # HoloBox — Interactive 3D LCD Display and AI Engagement Platform
 
-https://github.com/sanju-xo/Holobox/blob/main/screenshots/unity%20.mp4
+
+<h2>🎬 Project Demo</h2>
+
+<video src="screenshots/unity%20.mp4" controls width="100%">
+</video>
+
 
 <p align="center">
   <img src="screenshots/admin login.png" width="45%" alt="Admin Login">
