@@ -3,10 +3,6 @@
 
 <h2>🎬 Project Demo</h2>
 
-<video src="screenshots/unity.mp4" controls width="100%">
-</video>
-
-
 <p align="center">
   <img src="screenshots/admin login.png" width="45%" alt="Admin Login">
   <img src="screenshots/admin home.png" width="45%" alt="Admin Home">
